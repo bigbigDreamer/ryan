@@ -21,7 +21,7 @@ const HomePage: FC = () => {
             <div className="flex justify-end">
                 <div className="flex items-center text-xs mb-10">
                     <div className="w-2xl mr-[5px]">
-                        <svg t="1687277604799" className="icon" viewBox="0 0 1024 1024" version="1.1"
+                        <svg t="1687277604799" className="icon cursor-pointer" viewBox="0 0 1024 1024" version="1.1"
                              xmlns="http://www.w3.org/2000/svg" p-id="2181" id="mx_n_1687277604800" width="16"
                              height="16">
                             <path
@@ -29,7 +29,7 @@ const HomePage: FC = () => {
                                 fill="#ffffff" p-id="2182"></path>
                         </svg>
                     </div>
-                    <div className="flex items-center" onClick={onClick}><a className={`${lang === 'zh' ? 'text-indigo-600' : ''}`} >ZH</a><span className="ml-1 mr-1">/</span><a className={`${lang === 'en' ? 'text-indigo-600' : ''}`}>EN</a></div>
+                    <div className="flex items-center cursor-pointer" onClick={onClick}><a className={`${lang === 'zh' ? 'text-indigo-600' : ''}`} >ZH</a><span className="ml-1 mr-1">/</span><a className={`${lang === 'en' ? 'text-indigo-600' : ''}`}>EN</a></div>
                 </div>
             </div>
             <div className="flex items-center justify-between mb-10">
