@@ -1,12 +1,15 @@
 import { useState } from "react";
 import type {FC} from "react";
 import { setLocales, t, setLang } from 'translator-client';
+import { Tooltip } from 'react-tooltip'
+import { CalendarDaysIcon, PhotoIcon, LifebuoyIcon, CpuChipIcon, CommandLineIcon } from '@heroicons/react/24/outline';
+import 'react-tooltip/dist/react-tooltip.css';
 import locales from '../../locales/complete.json';
 
 setLocales(locales);
-setLang('zh');
+setLang('en');
 const HomePage: FC = () => {
-    const [lang,_setLang] = useState<'zh'|'en'>('zh');
+    const [lang,_setLang] = useState<'zh'|'en'>('en');
 
     const onClick = () => {
         _setLang(pre => {
@@ -29,7 +32,7 @@ const HomePage: FC = () => {
                                 fill="#ffffff" p-id="2182"></path>
                         </svg>
                     </div>
-                    <div className="flex items-center cursor-pointer" onClick={onClick}><a className={`${lang === 'zh' ? 'text-indigo-600' : ''}`} >ZH</a><span className="ml-1 mr-1">/</span><a className={`${lang === 'en' ? 'text-indigo-600' : ''}`}>EN</a></div>
+                    <div className="flex items-center cursor-pointer" onClick={onClick}><a className={`${lang === 'en' ? 'text-indigo-600' : ''}`} >EN</a><span className="ml-1 mr-1">/</span><a className={`${lang === 'zh' ? 'text-indigo-600' : ''}`}>ZH</a></div>
                 </div>
             </div>
             <div className="flex items-center justify-between mb-10">
@@ -44,12 +47,46 @@ const HomePage: FC = () => {
             <div className="flex flex-col break-words items-center  justify-center ">
                 <div className="leading-7">
                     <p className="mb-5">{
-                        t('我是一名拥有 3 年经验的 web 开发者，比较熟悉 react，擅长组件库的开发、治理和维护，精通前端领域所有框架的拼写，擅长各种 API 的阅读和调用。')
-                    }</p>
-                    <p className="mb-5">{
                         t('我有一个中文的花名（或者是笔名）叫“不换”，曾经的英文名叫 eric，但是后来觉得它太大众了，所以换成了 ryan。')
                     }</p>
+                    <p className="mb-5">{
+                        t('我是一名拥有 3 年经验的 web 开发者，比较熟悉 react，擅长组件库的开发、治理和维护，精通前端领域所有框架的拼写，擅长各种 API 的阅读和调用。')
+                    }</p>
+                    <p className="mb-5">
+                        {
+                            t('平时喜欢静下心来研究一些奇奇怪怪的东西，你可以在')
+                        } <a className="text-indigo-500" href="https://github.com/bigbigDreamer">GitHub</a> {
+                        t('上找到我，也可以使用')} <a className="text-indigo-500" href="mailto:email@binlin.wang" type="email"> Email </a> {t('联系我')}。
+                    </p>
+                    <p>{t('我随着兴趣爱好写了一些小玩意，你可以尽情欣赏～')}</p>
                 </div>
+            </div>
+            <div className="grid grid-cols-4 gap-4 mt-10 pb-10">
+                <Tooltip id="weekly-tooltip"/>
+                <a href="https://weekly.bigdreamer.cc" className="flex flex-col items-center cursor-pointer" data-tooltip-id="weekly-tooltip" data-tooltip-content={t('这是我的个人周刊，主要收集每周的新闻和一些比较有用的工作。')}>
+                    <CalendarDaysIcon className="h-6 w-6 text-white mb-1" aria-hidden="true" />
+                    <span>Weekly</span>
+                </a>
+                <Tooltip id="QRposter-tooltip"/>
+                <a href="https://qr-poster-playground.bigdreamer.cc" className="flex flex-col items-center cursor-pointer" data-tooltip-id="QRposter-tooltip" data-tooltip-content={t('这是一个海报二维码的生成组件，内部实践了一番整个前端的基建设施和github的CI/CD。')}>
+                    <PhotoIcon className="h-6 w-6 text-white mb-1" aria-hidden="true" />
+                    <span>QRPoster</span>
+                </a>
+                <Tooltip id="blog-tooltip"/>
+                <a href="https://www.bigdreamer.cc" className="flex flex-col items-center cursor-pointer" data-tooltip-id="blog-tooltip" data-tooltip-content={t('这是我的个人博客，文章篇数很少是因为最近才迁过来的，目的是只发深度思考和优质文章，我的另外一个博客是 dev.bigdreamer.cc。')}>
+                    <LifebuoyIcon className="h-6 w-6 text-white mb-1" aria-hidden="true" />
+                    <span>Blog</span>
+                </a>
+                <Tooltip id="montage-tooltip"/>
+                <a href="https://montage.bigdreamer.cc" className="flex flex-col items-center cursor-pointer" data-tooltip-id="montage-tooltip" data-tooltip-content={t('这是一个 monorepo 架构的仓库，用各种不同的技术，去解决对应的问题。')}>
+                    <CpuChipIcon className="h-6 w-6 text-white mb-1" aria-hidden="true" />
+                    <span>Montage</span>
+                </a>
+                <Tooltip id="xumi-tooltip"/>
+                <a href="https://github.com/bigbigDreamer/xumi" className="flex flex-col items-center cursor-pointer" data-tooltip-id="xumi-tooltip" data-tooltip-content={t('这是一个徒手撸的脚手架，是个半成品，但是学到和实践了很多东西，我会慢慢把它完善起来的。')}>
+                    <CommandLineIcon className="h-6 w-6 text-white mb-1" aria-hidden="true" />
+                    <span>XuMi</span>
+                </a>
             </div>
         </div>
     )
