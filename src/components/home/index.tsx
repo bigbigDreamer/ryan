@@ -39,13 +39,13 @@ const HomePage: FC = () => {
                     <h3 className="font-medium text-xm">My name is ryanwang.</h3>
                 </div>
                 <div className="flex-initial w-20">
-                    <img className="w-full rounded-s-full rounded-e-full" src="https://to-out-use.oss-cn-hangzhou.aliyuncs.com/common/%E6%88%91%E7%9A%84%E9%A1%B9%E7%9B%AE%20(1)%202.png" alt="my photo"/>
+                    <img className="w-full rounded-s-full rounded-e-full" src="https://to-out-use.oss-cn-hangzhou.aliyuncs.com/common/myphoto2.jpg" alt="my photo"/>
                 </div>
             </div>
             <div className="flex flex-col break-words items-center  justify-center ">
                 <div className="leading-7">
                     <p className="mb-5">{
-                        t('我有一个中文的花名（或者是笔名）叫“不换”，曾经的英文名叫 eric，但是后来觉得它太大众了，所以换成了 ryan。')
+                        t('我的花名（或者是笔名）叫“不换”，英文名叫 ryan。在现实生活中你可以叫我 “小王”，在游戏里，我有一个独一无二的名字叫 “林温芙”，很荣幸你能在这里看到我的个人介绍。')
                     }</p>
                     <p className="mb-5">{
                         t('我是一名拥有 3 年经验的 web 开发者，比较熟悉 react，擅长组件库的开发、治理和维护，精通前端领域所有框架的拼写，擅长各种 API 的阅读和调用。')

@@ -1,46 +1,26 @@
 {
+  "我的花名（或者是笔名）叫“不换”，英文名叫 ryan。在现实生活中你可以叫我 “小王”，在游戏里，我有一个独一无二的名字叫 “林温芙”，很荣幸你能在这里看到我的个人介绍。": {
+    "zh": "我的花名（或者是笔名）叫“不换”，英文名叫 ryan。在现实生活中你可以叫我 “小王”，在游戏里，我有一个独一无二的名字叫 “林温芙”，很荣幸你能在这里看到我的个人介绍。",
+    "en": "My flower name (or pen name) is \"No Change\", English name is Ryan. In real life you can call me \"Little Wang\", in the game, I have a unique name called \"Lin Wenfu\", it's an honor that you can see my personal introduction here."
+  },
   "我是一名拥有 3 年经验的 web 开发者，比较熟悉 react，擅长组件库的开发、治理和维护，精通前端领域所有框架的拼写，擅长各种 API 的阅读和调用。": {
     "zh": "我是一名拥有 3 年经验的 web 开发者，比较熟悉 react，擅长组件库的开发、治理和维护，精通前端领域所有框架的拼写，擅长各种 API 的阅读和调用。",
-    "en": "I am a web developer with 3 years of experience, familiar with react, good at component library development, governance and maintenance, good at spelling all frameworks in front-end domain, good at reading and calling various APIs."
-  },
-  "我有一个中文的花名（或者是笔名）叫“不换”，曾经的英文名叫 eric，但是后来觉得它太大众了，所以换成了 ryan。": {
-    "zh": "我有一个中文的花名（或者是笔名）叫“不换”，曾经的英文名叫 eric，但是后来觉得它太大众了，所以换成了 ryan。",
-    "en": "I have a Chinese fancy name (or a pen name) called \"不换\", which used to be called eric in English, but then I thought it was too popular, so I changed it to ryan."
+    "en": "I am a web developer with 3 years of experience, familiar with React, good at developing, governing and maintaining component libraries, proficient in spelling all frameworks in the front-end field, and good at reading and calling various APIs."
   },
   "平时喜欢静下心来研究一些奇奇怪怪的东西，你可以在": {
     "zh": "平时喜欢静下心来研究一些奇奇怪怪的东西，你可以在",
-    "en": "Normally, you like to quietly study some odd things, you can do so in"
+    "en": "I usually like to take some time to study strange things. You can find them at"
   },
   "上找到我，也可以使用": {
     "zh": "上找到我，也可以使用",
-    "en": "find me on or you can use"
+    "en": "You can also use"
   },
   "联系我": {
     "zh": "联系我",
-    "en": "contact me"
+    "en": "to contact Me"
   },
   "我随着兴趣爱好写了一些小玩意，你可以尽情欣赏～": {
     "zh": "我随着兴趣爱好写了一些小玩意，你可以尽情欣赏～",
-    "en": "I wrote some gadgets with my hobby, you can enjoy ~"
-  },
-  "这是我的个人周刊，主要收集每周的新闻和一些比较有用的工作。": {
-    "zh": "这是我的个人周刊，主要收集每周的新闻和一些比较有用的工作。",
-    "en": "This is my personal weekly magazine, which mainly collects weekly news and some more useful jobs."
-  },
-  "这是一个海报二维码的生成组件，内部实践了一番整个前端的基建设施和github的CI/CD。": {
-    "zh": "这是一个海报二维码的生成组件，内部实践了一番整个前端的基建设施和github的CI/CD。",
-    "en": "This is a poster QR code generation component, with some internal practice of the entire front-end infrastructure and github's CI/CD."
-  },
-  "这是我的个人博客，文章篇数很少是因为最近才迁过来的，目的是只发深度思考和优质文章，我的另外一个博客是 dev.bigdreamer.cc。": {
-    "zh": "这是我的个人博客，文章篇数很少是因为最近才迁过来的，目的是只发深度思考和优质文章，我的另外一个博客是 dev.bigdreamer.cc。",
-    "en": "This is my personal blog, the number of articles is very few because recently moved over, the purpose is to post only deep thinking and quality articles, my other blog is dev.bigdreamer.cc."
-  },
-  "这是一个 monorepo 架构的仓库，用各种不同的技术，去解决对应的问题。": {
-    "zh": "这是一个 monorepo 架构的仓库，用各种不同的技术，去解决对应的问题。",
-    "en": "This is a repository of monorepo architecture, using a variety of different technologies to solve the corresponding problems."
-  },
-  "这是一个徒手撸的脚手架，是个半成品，但是学到和实践了很多东西，我会慢慢把它完善起来的。": {
-    "zh": "这是一个徒手撸的脚手架，是个半成品，但是学到和实践了很多东西，我会慢慢把它完善起来的。",
-    "en": "This is a freehand jerk scaffolding, is a half-baked, but learn and practice a lot of things, I will slowly perfect it up."
+    "en": "I wrote some small things out of interest and hobby, you can enjoy them~"
   }
 }
