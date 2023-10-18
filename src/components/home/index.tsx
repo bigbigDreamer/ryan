@@ -1,6 +1,7 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import type {FC} from "react";
 import { setLocales, t, setLang } from 'translator-client';
+import dayjs from 'dayjs';
 import { CalendarDaysIcon, PhotoIcon, LifebuoyIcon, CpuChipIcon, CommandLineIcon } from '@heroicons/react/24/outline';
 import locales from '../../locales/complete.json';
 
@@ -9,10 +10,23 @@ setLang('en');
 const HomePage: FC = () => {
     const [lang,_setLang] = useState<'zh'|'en'>('en');
 
+    useEffect(() => {
+        if(window.gtag) {
+            window.gtag('event', 'pageView', {
+                time:dayjs().format('YYYY年MM月DD日 HH时mm分ss秒')
+            });
+        }
+    }, []);
+
     const onClick = () => {
         _setLang(pre => {
             const _lang =  pre ==='zh' ? 'en' : 'zh';
             setLang(_lang);
+            if(window.gtag) {
+                window.gtag('event', 'toggleLang', {
+                    lang:_lang
+                });
+            }
             return _lang;
         })
     }
