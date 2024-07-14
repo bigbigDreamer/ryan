@@ -2,13 +2,16 @@ import {useEffect, useState} from "react";
 import type {FC} from "react";
 import { setLocales, t, setLang } from 'translator-client';
 import dayjs from 'dayjs';
-import { CalendarDaysIcon, PhotoIcon, LifebuoyIcon, CpuChipIcon, CommandLineIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, LifebuoyIcon, BookOpenIcon , CommandLineIcon } from '@heroicons/react/24/outline';
 import locales from '../../locales/complete.json';
 
+
 setLocales(locales);
-setLang('en');
+const userLanguage = navigator.language || navigator.languages || 'en' as any
+setLang(userLanguage === 'en' ? userLanguage : 'zh');
+
 const HomePage: FC = () => {
-    const [lang,_setLang] = useState<'zh'|'en'>('en');
+    const [lang,_setLang] = useState<'zh'|'en'>(userLanguage);
 
     useEffect(() => {
         if(window.gtag) {
@@ -32,7 +35,7 @@ const HomePage: FC = () => {
     }
 
     return (
-        <div className="flex flex-col mt-90 text-white max-w-[400px] p-10">
+        <div className="flex flex-col text-white max-w-[400px] p-10 h-[100%]">
             <div className="flex justify-end">
                 <div className="flex items-center text-xs mb-10">
                     <div className="w-2xl mr-[5px]">
@@ -44,7 +47,7 @@ const HomePage: FC = () => {
                                 fill="#ffffff" p-id="2182"></path>
                         </svg>
                     </div>
-                    <div className="flex items-center cursor-pointer" onClick={onClick}><a className={`${lang === 'en' ? 'text-indigo-600' : ''}`} >EN</a><span className="ml-1 mr-1">/</span><a className={`${lang === 'zh' ? 'text-indigo-600' : ''}`}>ZH</a></div>
+                    <div className="flex items-center cursor-pointer" onClick={onClick}><a className={`${lang === 'en' ? 'text-indigo-600' : ''}`} >EN</a><span className="ml-1 mr-1">/</span><a className={`${lang === 'en' ? '' : 'text-indigo-600'}`}>ZH</a></div>
                 </div>
             </div>
             <div className="flex items-center justify-between mb-10">
@@ -53,20 +56,20 @@ const HomePage: FC = () => {
                     <h3 className="font-medium text-xm">My name is ryanwang.</h3>
                 </div>
                 <div className="flex-initial w-20">
-                    <img className="w-full rounded-s-full rounded-e-full" src="https://to-out-use.oss-cn-hangzhou.aliyuncs.com/common/myphoto2.jpg" alt="my photo"/>
+                    <img className="w-full rounded-s-full rounded-e-full" src="https://bigdreamerblog.oss-cn-beijing.aliyuncs.com/nextBlog/ryanwang.png" alt="my photo"/>
                 </div>
             </div>
-            <div className="flex flex-col break-words items-center  justify-center ">
+            <div className="flex flex-col break-words items-center  justify-center">
                 <div className="leading-7">
                     <p className="mb-5">{
-                        t('我的花名（或者是笔名）叫“不换”，英文名叫 ryan。在现实生活中你可以叫我 “小王”，在游戏里，我有一个独一无二的名字叫 “林温芙”，很荣幸你能在这里看到我的个人介绍。')
+                        t('我的花名（或者是笔名）叫“不换”，英文名叫 ryanwang。在现实生活中你可以叫我 “小王”，在游戏里，我有一个独一无二的名字叫 “林温芙”，很荣幸你能在这里看到我的个人介绍。')
                     }</p>
                     <p className="mb-5">{
                         t('我是一名拥有 3 年经验的 web 开发者，比较熟悉 react，擅长组件库的开发、治理和维护，精通前端领域所有框架的拼写，擅长各种 API 的阅读和调用。')
                     }</p>
                     <p className="mb-5">
                         {
-                            t('平时喜欢静下心来研究一些奇奇怪怪的东西，你可以在')
+                            t('热爱工作，也同样热爱开源社区，下班后喜欢静下心来研究一些奇奇怪怪的东西，你可以在')
                         } <a className="text-indigo-500" href="https://github.com/bigbigDreamer">GitHub</a> {
                         t('上找到我，也可以使用')} <a className="text-indigo-500" href="mailto:email@binlin.wang" type="email"> Email </a> {t('联系我')}。
                     </p>
@@ -74,27 +77,31 @@ const HomePage: FC = () => {
                 </div>
             </div>
             <div className="grid grid-cols-4 gap-4 mt-10 pb-10">
-                <a href="https://weekly.bigdreamer.cc" className="flex flex-col items-center cursor-pointer" data-tooltip-id="weekly-tooltip" >
+                <a href="https://weekly.binlin.wang" className="flex flex-col items-center cursor-pointer" data-tooltip-id="weekly-tooltip" >
                     <CalendarDaysIcon className="h-6 w-6 text-white mb-1" aria-hidden="true" />
-                    <span>Weekly</span>
+                    <span>{t('周刊')}</span>
                 </a>
-                <a href="https://qr-poster-playground.bigdreamer.cc" className="flex flex-col items-center cursor-pointer" data-tooltip-id="QRposter-tooltip" >
-                    <PhotoIcon className="h-6 w-6 text-white mb-1" aria-hidden="true" />
-                    <span>QRPoster</span>
+                <a href="https://ts-handbook.binlin.wang" className="flex flex-col items-center cursor-pointer" data-tooltip-id="QRposter-tooltip" >
+                    <BookOpenIcon className="h-6 w-6 text-white mb-1" aria-hidden="true" />
+                    <span>{t('TS手札')}</span>
                 </a>
-                <a href="https://www.bigdreamer.cc" className="flex flex-col items-center cursor-pointer" data-tooltip-id="blog-tooltip" >
+                <a href="https://blog.binlin.wang" className="flex flex-col items-center cursor-pointer" data-tooltip-id="blog-tooltip" >
                     <LifebuoyIcon className="h-6 w-6 text-white mb-1" aria-hidden="true" />
-                    <span>Blog</span>
-                </a>
-                <a href="https://montage.bigdreamer.cc" className="flex flex-col items-center cursor-pointer" data-tooltip-id="montage-tooltip">
-                    <CpuChipIcon className="h-6 w-6 text-white mb-1" aria-hidden="true" />
-                    <span>Montage</span>
+                    <span>{t('博客')}</span>
                 </a>
                 <a href="https://github.com/bigbigDreamer/xumi" className="flex flex-col items-center cursor-pointer" data-tooltip-id="xumi-tooltip">
                     <CommandLineIcon className="h-6 w-6 text-white mb-1" aria-hidden="true" />
-                    <span>XuMi</span>
+                    <span>{t('须弥')}</span>
                 </a>
             </div>
+            <div className="flex flex-col break-words items-center  justify-center">
+                <div className="leading-7">
+                    <p className="mb-5">{
+                        t('最后，我还是公众号("不换的随想乐园")的作者，平时喜欢总结和输出一些知识理解和经验总结，如果你也感兴趣，欢迎来关注我哦~')
+                    }</p>
+                </div>
+            </div>
+            <div className="w-[100%] h-[100%] pb-10"><img className="w-[100%] h-[100%]" src="https://bigdreamerblog.oss-cn-beijing.aliyuncs.com/nextBlog/扫码_搜索联合传播样式-白色版.png" alt=""/></div>
         </div>
     )
 };
