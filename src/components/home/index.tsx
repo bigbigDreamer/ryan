@@ -27,7 +27,6 @@ const HomePage: FC = () => {
     const onClick = () => {
         _setLang(pre => {
             const _lang =  pre ==='zh' ? 'en' : 'zh';
-            console.log(pre, "pppp000")
             setLang(_lang);
             if(window.gtag) {
                 window.gtag('event', 'toggleLang', {
