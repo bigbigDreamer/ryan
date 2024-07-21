@@ -8,10 +8,13 @@ import locales from '../../locales/complete.json';
 
 setLocales(locales);
 const userLanguage = navigator.language || navigator.languages || 'en' as any
-setLang(userLanguage === 'en' ? userLanguage : 'zh');
+
+const finalLang = userLanguage === 'en' ? userLanguage : 'zh'
+
+setLang(finalLang);
 
 const HomePage: FC = () => {
-    const [lang,_setLang] = useState<'zh'|'en'>(userLanguage);
+    const [lang,_setLang] = useState<'zh'|'en'>(finalLang);
 
     useEffect(() => {
         if(window.gtag) {
@@ -24,6 +27,7 @@ const HomePage: FC = () => {
     const onClick = () => {
         _setLang(pre => {
             const _lang =  pre ==='zh' ? 'en' : 'zh';
+            console.log(pre, "pppp000")
             setLang(_lang);
             if(window.gtag) {
                 window.gtag('event', 'toggleLang', {
